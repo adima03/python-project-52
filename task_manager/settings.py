@@ -153,12 +153,12 @@ LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 
 ROLLBAR = {
-    'access_token': os.getenv('ROLLBAR_ACCESS_TOKEN', 'ROOLBAR_TOKEN'),
+    'access_token': os.getenv('ROLLBAR_ACCESS_TOKEN', ''),
     'environment': os.getenv('ROLLBAR_ENV', 'development'),
     'code_version': '1.0',
     'root': BASE_DIR,
 }
 
-
-if ROLLBAR['access_token']:
+# Инициализируем Rollbar только при валидном токене (не пустой и не заглушка)
+if ROLLBAR['access_token'] and ROLLBAR['access_token'] not in ('', 'ROOLBAR_TOKEN'):
     rollbar.init(**ROLLBAR)

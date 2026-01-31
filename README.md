@@ -52,6 +52,16 @@ A Django-based task management system that allows users to create, track, and ma
    make run
    ```
 
+## Deploy on Render
+
+В настройках Web Service укажите:
+
+- **Build Command:** `./build.sh`
+- **Release Command:** `uv run python manage.py migrate --noinput`
+- **Start Command:** `make render-start` или `uv run gunicorn task_manager.wsgi`
+
+Без **Release Command** таблицы в PostgreSQL не создаются (ошибка `relation "users_user" does not exist`).
+
 ## Development
 
 - Run tests:
