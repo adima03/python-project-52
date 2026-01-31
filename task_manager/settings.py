@@ -35,9 +35,11 @@ DEBUG = os.getenv("DEBUG", False)
 ALLOWED_HOSTS = [
     'localhost',
     '127.0.0.1',
-    'webserver', 
-    'python-project-52-tae0.onrender.com',
-    ]
+    'webserver',
+]
+# Render подставляет свой хост в RENDER_EXTERNAL_HOSTNAME
+if os.getenv('RENDER_EXTERNAL_HOSTNAME'):
+    ALLOWED_HOSTS.append(os.getenv('RENDER_EXTERNAL_HOSTNAME'))
 
 
 # Application definition
