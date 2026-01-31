@@ -3,6 +3,8 @@
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=adima03_python-project-52&metric=coverage)](https://sonarcloud.io/summary/new_code?id=adima03_python-project-52)
 # Task manager  
 
+**Демо:** [https://python-project-52-w7hu.onrender.com](https://python-project-52-w7hu.onrender.com)
+
 ### Project Description
 
 # Task Manager
