@@ -1,0 +1,9 @@
+# Render Blueprint (опционально). Если сервис уже создан вручную — задайте Release Command в Dashboard.
+services:
+  - type: web
+    name: task-manager
+    runtime: python
+    buildCommand: "./build.sh"
+    startCommand: "uv run gunicorn task_manager.wsgi"
+    # Миграции запускаются при каждом деплое (DATABASE_URL доступен на этапе release).
+    releaseCommand: "uv run python manage.py migrate --noinput"
