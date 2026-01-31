@@ -5,6 +5,7 @@ on:
     branches: [ main ]
   pull_request:
     branches: [ main ]
+  workflow_dispatch:  # ручной запуск: Actions → Python CI → Run workflow
 
 jobs:
   test-and-sonarqube:
